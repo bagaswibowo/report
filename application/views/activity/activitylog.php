@@ -43,7 +43,7 @@
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url('index.php/admin')?>">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
@@ -79,7 +79,7 @@
       </li>
 
       <!-- Nav Item - Tables -->
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link" href="./activitylog">
           <i class="far fa-fw fa-address-book"></i>
           <span>Log</span></a>
@@ -156,47 +156,77 @@
             </div>
             <div class="card-body">
               <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-bordered" id="logDataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
                       <th>Instansi</th>
                       <th>Log</th>
                     </tr>
                   </thead>
-                  <tfoot>
-                    <tr>
-                      <th>Instansi</th>
-                      <th>Log</th>
-                    </tr>
-                  </tfoot>
                   <tbody>
                     <tr>
-                      <td>Tiger Nixon</td>
-                      <td>System Architect</td>
+                      <td>Diskominfo Salatiga</td>
+                      <td>Kirim Proposal dan RAB Masterplan TIK dan DED FO
+                        <br><br>
+                          <div class='date-text'>12 Februari 2019
+                          </div>
+                      </td>
                     </tr>
                     <tr>
-                      <td>Tiger Nixon</td>
-                      <td>System Architect</td>
+                      <td>Diskominfo Salatiga</td>
+                      <td>Kirim jadwal pelatihan ke pak Eko
+                        <br><br>
+                          <div class='date-text'>06 Juni 2018
+                          </div>
+                      </td>
                     </tr>
                     <tr>
-                      <td>Tiger Nixon</td>
-                      <td>System Architect</td>
+                      <td>Diskominfo Salatiga</td>
+                      <td>Kirim Proposal dan RAB Masterplan TIK dan DED FO
+                        <br><br>
+                          <div class='date-text'>05 Juni 2018
+                          </div>
+                      </td>
                     </tr>
                     <tr>
-                      <td>Tiger Nixon</td>
-                      <td>System Architect</td>
+                      <td>Diskominfo Salatiga</td>
+                      <td>Kirim Proposal dan RAB Masterplan TIK dan DED FO
+                        <br><br>
+                          <div class='date-text'>12 Februari 2019
+                          </div>
+                      </td>
                     </tr>
                     <tr>
-                      <td>Tiger Nixon</td>
-                      <td>System Architect</td>
+                      <td>Diskominfo Salatiga</td>
+                      <td>Kirim Proposal dan RAB Masterplan TIK dan DED FO
+                        <br><br>
+                          <div class='date-text'>12 Februari 2019
+                          </div>
+                      </td>
                     </tr>
                     <tr>
-                      <td>Tiger Nixon</td>
-                      <td>System Architect</td>
+                      <td>Diskominfo Lubuk Linggau</td>
+                      <td>Kirim Proposal dan RAB Masterplan TIK dan DED FO
+                        <br><br>
+                          <div class='date-text'>12 Februari 2019
+                          </div>
+                      </td>
                     </tr>
                     <tr>
-                      <td>Tiger Nixon</td>
-                      <td>System Architect</td>
+                      <td>Diskominfo Lubuk Linggau</td>
+                      <td>Kirim Proposal dan RAB Masterplan TIK dan DED FO
+                        <br><br>
+                          <div class='date-text'>12 Februari 2019
+                          </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Diskominfo Lubuk Linggau</td>
+                      <td>Kirim Proposal dan RAB Masterplan TIK dan DED FO
+                        <br><br>
+                          <div class='date-text'>12 Februari 2019
+                          </div>
+                      </td>
                     </tr>
                     
                   </tbody>
@@ -266,8 +296,19 @@
   <script src="<?php echo base_url('assets/datatables/dataTables.bootstrap4.min.js')?>"></script>
 
   <!-- Page level custom scripts -->
-  <script src="<?php echo base_url('js/demo/datatables-demo.js')?>"></script>
+  <script src="<?php echo base_url('js/datatables-log.js')?>"></script>
 
 </body>
 
 </html>
+
+<style Type='text/css'>
+tr.group,
+tr.group:hover {
+    background-color: #eee !important;
+    color: black;
+}
+.date-text{
+  color: red;
+}
+</style>

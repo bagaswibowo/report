@@ -43,7 +43,7 @@
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url('index.php/admin')?>">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
@@ -65,7 +65,7 @@
       </li>
       
       <!-- Nav Item - Tables -->
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link" href="./report">
           <i class="fas fa-fw fa-list-alt"></i>
           <span>Report</span></a>
@@ -147,7 +147,7 @@
 
           <!-- Page Heading -->
           <h1 class="h3 mb-2 text-gray-800">Report</h1>
-          <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
+          <p class="mb-4">Berisikan laporan dari daftar rencana yang berhasil dikerjakan.</p>
 
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
@@ -156,77 +156,82 @@
             </div>
             <div class="card-body">
               <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
+                <table class="table table-bordered" id="reportDataTable" width="100%" cellspacing="0">
+                <thead>
                     <tr>
-                      <th>Name</th>
-                      <th>Position</th>
-                      <th>Office</th>
-                      <th>Age</th>
-                      <th>Start date</th>
-                      <th>Salary</th>
+                      <th>No</th>
+                      <th>Activity</th>
+                      <th>Type Activity</th>
+                      <th>Customer Name</th>
+                      <th>Stage</th>
+                      <th>Noted</th>
+                      <th>Date</th>
                     </tr>
                   </thead>
-                  <tfoot>
-                    <tr>
-                      <th>Name</th>
-                      <th>Position</th>
-                      <th>Office</th>
-                      <th>Age</th>
-                      <th>Start date</th>
-                      <th>Salary</th>
-                    </tr>
-                  </tfoot>
                   <tbody>
                     <tr>
-                      <td>Tiger Nixon</td>
-                      <td>System Architect</td>
-                      <td>Edinburgh</td>
-                      <td>61</td>
-                      <td>2011/04/25</td>
-                      <td>$320,800</td>
+                      <td>1</td>
+                      <td>Cari kontak diskominfo Lubuk Linggau</td>
+                      <td>Call</td>
+                      <td>Diskominfo Kab.</td>
+                      <td>Open Prospect</td>
+                      <td>Sudah mendapatkan nomer bidang e-gov</td>
+                      <td>17 Juni 2019</td>
                     </tr>
                     <tr>
-                      <td>Garrett Winters</td>
-                      <td>Accountant</td>
-                      <td>Tokyo</td>
-                      <td>63</td>
-                      <td>2011/07/25</td>
-                      <td>$170,750</td>
+                      <td>2</td>
+                      <td>Cari kontak diskominfo Lubuk Linggau</td>
+                      <td>Call</td>
+                      <td>Diskominfo Kab.</td>
+                      <td>Open Prospect</td>
+                      <td>Nomer kantor tidak tercantum di web. Sudah chat melakui DM IG tapi belum di respon</td>
+                      <td>17 Juni 2019</td>
                     </tr>
                     <tr>
-                      <td>Ashton Cox</td>
-                      <td>Junior Technical Author</td>
-                      <td>San Francisco</td>
-                      <td>66</td>
-                      <td>2009/01/12</td>
-                      <td>$86,000</td>
+                      <td>3</td>
+                      <td>Cari kontak diskominfo Lubuk Linggau</td>
+                      <td>Call</td>
+                      <td>Diskominfo Kab.</td>
+                      <td>Open Prospect</td>
+                      <td>Nomer kantor tidak bisa dihubungi</td>
+                      <td>17 Juni 2019</td>
                     </tr>
                     <tr>
-                      <td>Cedric Kelly</td>
-                      <td>Senior Javascript Developer</td>
-                      <td>Edinburgh</td>
-                      <td>22</td>
-                      <td>2012/03/29</td>
-                      <td>$433,060</td>
+                      <td>4</td>
+                      <td>Cari kontak diskominfo Lubuk Linggau</td>
+                      <td>Call</td>
+                      <td>Diskominfo Kab.</td>
+                      <td>Open Prospect</td>
+                      <td>Sudah mendapatkan nomer kabid kominfonya</td>
+                      <td>18 Juni 2019</td>
                     </tr>
                     <tr>
-                      <td>Airi Satou</td>
-                      <td>Accountant</td>
-                      <td>Tokyo</td>
-                      <td>33</td>
-                      <td>2008/11/28</td>
-                      <td>$162,700</td>
+                      <td>5</td>
+                      <td>Cari kontak diskominfo Lubuk Linggau</td>
+                      <td>Call</td>
+                      <td>Diskominfo Kab.</td>
+                      <td>Open Prospect</td>
+                      <td>Done</td>
+                      <td>18 Juni 2019</td>
                     </tr>
                     <tr>
-                      <td>Brielle Williamson</td>
-                      <td>Integration Specialist</td>
-                      <td>New York</td>
-                      <td>61</td>
-                      <td>2012/12/02</td>
-                      <td>$372,000</td>
+                      <td>6</td>
+                      <td>Cari kontak diskominfo Lubuk Linggau</td>
+                      <td>Call</td>
+                      <td>Diskominfo Kab.</td>
+                      <td>Open Prospect</td>
+                      <td>Nomer kantor tidak bisa dihubungi</td>
+                      <td>18 Juni 2019</td>
                     </tr>
-                    
+                    <tr>
+                      <td>7</td>
+                      <td>Cari kontak diskominfo Lubuk Linggau</td>
+                      <td>Call</td>
+                      <td>Diskominfo Kab.</td>
+                      <td>Open Prospect</td>
+                      <td>Nomor kantor tidak bisa dihubungi</td>
+                      <td>19 Juni 2019</td>
+                    </tr>
                   </tbody>
                 </table>
               </div>
@@ -294,8 +299,15 @@
   <script src="<?php echo base_url('assets/datatables/dataTables.bootstrap4.min.js')?>"></script>
 
   <!-- Page level custom scripts -->
-  <script src="<?php echo base_url('js/demo/datatables-demo.js')?>"></script>
+  <script src="<?php echo base_url('js/datatables-report.js')?>"></script>
 
 </body>
 
 </html>
+
+<style Type='text/css'>
+tr.group,
+tr.group:hover {
+    background-color: #eee !important;
+}
+</style>

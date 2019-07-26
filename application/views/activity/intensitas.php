@@ -40,7 +40,7 @@
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url('index.php/admin')?>">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
@@ -69,7 +69,7 @@
       </li>
 
       <!-- Nav Item - Charts -->
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link" href="./intensitas">
           <i class="fas fa-fw fa-chart-bar"></i>
           <span>Intensitas Kontak</span></a>
@@ -143,8 +143,8 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Charts</h1>
-          <p class="mb-4">Chart.js is a third party plugin that is used to generate the charts in this theme. The charts below have been customized - for further customization options, please visit the <a target="_blank" href="https://www.chartjs.org/docs/latest/">official Chart.js documentation</a>.</p>
+          <h1 class="h3 mb-2 text-gray-800">Intensitas Kontak</h1>
+          <p class="mb-4">Bagan rekap intensitas kontak yang sudah dihubungi.</p>
 
           <!-- Content Row -->
           <div class="row">
@@ -160,8 +160,7 @@
                   <div class="chart-bar">
                     <canvas id="myBarChart"></canvas>
                   </div>
-                  <hr>
-                  Styling for the bar chart can be found in the <code>/js/demo/chart-bar-demo.js</code> file.
+                
                 </div>
               </div>
 
@@ -227,9 +226,7 @@
   <script src="<?php echo base_url('assets/chart.js/Chart.min.js')?>"></script>
 
   <!-- Page level custom scripts -->
-  <script src="<?php echo base_url('js/demo/chart-area-demo.js')?>"></script>
-  <script src="<?php echo base_url('js/demo/chart-pie-demo.js')?>"></script>
-  <script src="<?php echo base_url('js/demo/chart-bar-demo.js')?>"></script>
+  <script src="<?php echo base_url('js/chart-bar-intensitas.js')?>"></script>
 
 </body>
 

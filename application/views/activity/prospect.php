@@ -31,7 +31,7 @@
   <!-- Sidebar -->
   <?php require 'application\views\includes\sidebar.php' ?>
   <script>
-        document.getElementById("plan").className += " active";
+        document.getElementById("project").className += " active";
   </script>
 
     <!-- Content Wrapper -->
@@ -47,27 +47,64 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Plan</h1>
-          <p class="mb-4">Daftar rencana yang akan dikerjakan.</p>
+          <h1 class="h3 mb-2 text-gray-800">Prospect</h1>
+          <p class="mb-4">Daftar Prospect</p>
+        
+        <!-- Content Row -->
+        <div class="row">
+
+        <!-- Revenue Card-->
+        <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Revenue</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">Rp 40,000</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        <!-- Est Gross Card-->
+        <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Est. Gross Profit</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">Rp 215,000</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        </div>
 
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">AM Planning Tables</h6>
+              <h6 class="m-0 font-weight-bold text-primary">AM Prospect Tables</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
-                <table class="table table-bordered" id="planDataTable" width="100%" cellspacing="0">
+                <table class="table table-bordered" id="projectDataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
                       <th>No</th>
-                      <th>Activity</th>
-                      <th>Type Activity</th>
-                      <th>Customer Name</th>
-                      <th>Stage</th>
-                      <th>Noted</th>
-                      <th>Date</th>
-                      <th>Status</th>
+                      <th>AM</th>
+                      <th>Account</th>
+                      <th>Project</th>
+                      <th>Revenue</th>
+                      <th>Est. Gross</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -78,11 +115,6 @@
                       <td>Diskominfo Kab.</td>
                       <td>Open Prospect</td>
                       <td>........................................</td>
-                      <td>17 Juni 2019</td>
-                      <td><a href="#" class="btn btn-success btn-circle btn-sm">
-                          <i class="fas fa-check"></i></a>
-                          <a href="#" class="btn btn-danger btn-circle btn-sm">
-                          <i class="fas fa-trash"></i></a></td>
                     </tr>
                     <tr>
                       <td>2</td>
@@ -91,11 +123,7 @@
                       <td>Diskominfo Kab.</td>
                       <td>Open Prospect</td>
                       <td>........................................</td>
-                      <td>17 Juni 2019</td>
-                      <td><a href="#" class="btn btn-success btn-circle btn-sm">
-                          <i class="fas fa-check"></i></a>
-                          <a href="#" class="btn btn-danger btn-circle btn-sm">
-                          <i class="fas fa-trash"></i></a></td>
+                      
                     </tr>
                     <tr>
                       <td>3</td>
@@ -104,11 +132,7 @@
                       <td>Diskominfo Kab.</td>
                       <td>Open Prospect</td>
                       <td>........................................</td>
-                      <td>17 Juni 2019</td>
-                      <td><a href="#" class="btn btn-success btn-circle btn-sm">
-                          <i class="fas fa-check"></i></a>
-                          <a href="#" class="btn btn-danger btn-circle btn-sm">
-                          <i class="fas fa-trash"></i></a></td>
+                      
                     </tr>
                     <tr>
                       <td>4</td>
@@ -117,11 +141,7 @@
                       <td>Diskominfo Kab.</td>
                       <td>Open Prospect</td>
                       <td>........................................</td>
-                      <td>18 Juni 2019</td>
-                      <td><a href="#" class="btn btn-success btn-circle btn-sm">
-                          <i class="fas fa-check"></i></a>
-                          <a href="#" class="btn btn-danger btn-circle btn-sm">
-                          <i class="fas fa-trash"></i></a></td>
+                      
                     </tr>
                     <tr>
                       <td>5</td>
@@ -130,11 +150,7 @@
                       <td>Diskominfo Kab.</td>
                       <td>Open Prospect</td>
                       <td>........................................</td>
-                      <td>18 Juni 2019</td>
-                      <td><a href="#" class="btn btn-success btn-circle btn-sm">
-                          <i class="fas fa-check"></i></a>
-                          <a href="#" class="btn btn-danger btn-circle btn-sm">
-                          <i class="fas fa-trash"></i></a></td>
+                      
                     </tr>
                     <tr>
                       <td>6</td>
@@ -143,11 +159,7 @@
                       <td>Diskominfo Kab.</td>
                       <td>Open Prospect</td>
                       <td>........................................</td>
-                      <td>18 Juni 2019</td>
-                      <td><a href="#" class="btn btn-success btn-circle btn-sm">
-                          <i class="fas fa-check"></i></a>
-                          <a href="#" class="btn btn-danger btn-circle btn-sm">
-                          <i class="fas fa-trash"></i></a></td>
+                      
                     </tr>
                     <tr>
                       <td>7</td>
@@ -156,11 +168,7 @@
                       <td>Diskominfo Kab.</td>
                       <td>Open Prospect</td>
                       <td>........................................</td>
-                      <td>19 Juni 2019</td>
-                      <td><a href="#" class="btn btn-success btn-circle btn-sm">
-                          <i class="fas fa-check"></i></a>
-                          <a href="#" class="btn btn-danger btn-circle btn-sm">
-                          <i class="fas fa-trash"></i></a></td>
+                      
                     </tr>
                   </tbody>
                 </table>
@@ -207,15 +215,8 @@
   <script src="<?php echo base_url('assets/datatables/dataTables.bootstrap4.min.js')?>"></script>
 
   <!-- Page level custom scripts -->
-  <script src="<?php echo base_url('js/datatables-plan.js')?>"></script>
+  <script src="<?php echo base_url('js/datatables-prospect.js')?>"></script>
 
 </body>
 
 </html>
-
-<style Type='text/css'>
-tr.group,
-tr.group:hover {
-    background-color: #eee !important;
-}
-</style>

@@ -59,3 +59,5 @@ $route['plan'] = 'activity/plan';
 $route['report'] = 'activity/report';
 $route['intensitas'] = 'activity/intensitas';
 $route['activitylog'] = 'activity/activitylog';
+$route['project'] = 'activity/project';
+$route['prospect'] = 'activity/prospect';

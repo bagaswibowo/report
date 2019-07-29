@@ -28,17 +28,17 @@ function number_format(number, decimals, dec_point, thousands_sep) {
 }
 
 // Bar Chart Example
-var ctx = document.getElementById("myBarChart");
-var myBarChart = new Chart(ctx, {
+var ctx = document.getElementById("intensitasChart");
+var intensitasChart = new Chart(ctx, {
   type: 'horizontalBar',
   data: {
-    labels: ["Diskominfo Pinrang", "Diskominfo Purbalingga", "Diskominfo Banyumas", "Diskominfo Brebes", "Diskominfo Kota Tegal", "Diskominfo Batang"],
+    labels: ["Diskominfo Pinrang", "Diskominfo Purbalingga", "Diskominfo Banyumas", "Diskominfo Brebes", "Diskominfo Kota Tegal", "Diskominfo Batang", "Diskominfo Jogja"],
     datasets: [{
       label: "Jumlah",
       backgroundColor: "#4e73df",
       hoverBackgroundColor: "#2e59d9",
       borderColor: "#4e73df",
-      data: [5, 8, 6, 7, 3, 9],
+      data: [5, 8, 6, 7, 3, 9, 2],
     }],
   },
   options: {
@@ -61,7 +61,7 @@ var myBarChart = new Chart(ctx, {
           drawBorder: false
         },
         ticks: {
-          maxTicksLimit: 6
+          
         },
         maxBarThickness: 25,
       }],

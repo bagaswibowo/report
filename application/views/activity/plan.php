@@ -50,6 +50,59 @@
           <h1 class="h3 mb-2 text-gray-800">Plan</h1>
           <p class="mb-4">Daftar rencana yang akan dikerjakan.</p>
 
+          <!-- Collapsable Card - Input Form -->
+          <div class="card shadow mb-4">
+                <!-- Card Header - Accordion -->
+                <a href="#inputFormCard" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                  <h6 class="m-0 font-weight-bold text-primary">Input Plan Form</h6>
+                </a>
+                <!-- Card Content - Collapse -->
+                <div class="collapse show" id="inputFormCard">
+                  <div class="card-body">                   
+                    <form>
+                    <div class="form-group">
+                      <label for="actName">Activity Name</label>
+                      <input type="text" class="form-control form-control-user" id="actName" placeholder="Enter activity name...">
+                    </div>
+                    <div class="form-group">
+                    <label for="actType">Type Activity</label>
+                      <select class="form-control" id="actType">
+                        <option>Call</option>
+                        <option>Email/Fax</option>
+                        <option>Customer Meeting</option>
+                        <option>Visitation</option>
+                        <option>Product Presentation</option>
+                        <option>Administration</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="cusName">Customer Name</label>
+                      <input type="text" class="form-control form-control-user" id="cusName" placeholder="Enter customer name...">
+                    </div>
+                    <div class="form-group">
+                    <label for="stage">Stage</label>
+                      <select class="form-control" id="stage">
+                        <option>Open Prospect</option>
+                        <option>Prospecting Progress</option>
+                        <option>Closing Deal</option>
+                        <option>Fail</option>
+                        <option>Project Progress</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="note">Note</label>
+                      <textarea class="form-control" id="note" rows="3"></textarea>
+                    </div>
+
+                      <a href="<?php echo base_url('index.php/admin')?>" class="btn btn-primary btn-user btn-block">
+                        Submit
+                      </a>
+                    </form>
+
+                  </div>
+                </div>
+              </div>
+
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">

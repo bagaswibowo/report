@@ -1,7 +1,7 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
 <!-- Sidebar - Brand -->
-<a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo base_url('index.php/admin')?>">
+<a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo base_url('./admin')?>">
   <div class="sidebar-brand-icon rotate-n-15">
     <i class="fas fa-laugh-wink"></i>
   </div>
@@ -13,7 +13,7 @@
 
 <!-- Nav Item - Dashboard -->
 <li class='nav-item' id='dashboard'>
-  <a class="nav-link" href="<?php echo base_url('index.php/admin')?>">
+  <a class="nav-link" href="<?php echo base_url('./admin')?>">
     <i class="fas fa-fw fa-tachometer-alt"></i>
     <span>Dashboard</span></a>
 </li>
@@ -54,6 +54,13 @@
     <span>Log</span></a>
 </li>
 
+<!-- Nav Item - Prospect -->
+<li class='nav-item' id='prospect'>
+  <a class="nav-link" href="./prospect">
+    <i class="fas fa-fw fa-chart-line"></i>
+    <span>Prospect</span></a>
+</li>
+
 <!-- Nav Item - Project -->
 <li class='nav-item' id='project'>
   <a class="nav-link" href="./project">
@@ -61,12 +68,13 @@
     <span>Project</span></a>
 </li>
 
-<!-- Nav Item - Prospect -->
-<li class='nav-item' id='prospect'>
-  <a class="nav-link" href="./prospect">
+<!-- Nav Item - History Project -->
+<li class='nav-item' id='historyProject'>
+  <a class="nav-link" href="./history-project">
     <i class="fas fa-fw fa-chart-line"></i>
-    <span>Prospect</span></a>
+    <span>History Project</span></a>
 </li>
+
 
 <!-- Divider -->
 <hr class="sidebar-divider d-none d-md-block">

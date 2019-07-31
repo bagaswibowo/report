@@ -3,23 +3,14 @@
 
 <head>
 
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <!-- Header -->
+  <?php include 'application\views\includes\header.php'; ?>
 
-  <title><?php echo SITE_NAME ?> - Planning</title>
-
-  <!-- Custom fonts for this template-->
-  <link href="<?php echo base_url('assets/fontawesome-free/css/all.min.css') ?>" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
-  <!-- Custom styles for this template-->
-  <link href="<?php echo base_url('css/sb-admin-2.min.css') ?>" rel="stylesheet">
-
+  <title><?php echo SITE_NAME;?> - Planning</title>
+  
   <!-- Custom styles for this page -->
   <link href="<?php echo base_url('assets/datatables/dataTables.bootstrap4.min.css')?>" rel="stylesheet">
+  <link href="<?php echo base_url('assets/datatables/responsive.bootstrap4.min.css')?>" rel="stylesheet">
 
 </head>
 
@@ -57,7 +48,7 @@
                   <h6 class="m-0 font-weight-bold text-primary">Input Plan Form</h6>
                 </a>
                 <!-- Card Content - Collapse -->
-                <div class="collapse show" id="inputFormCard">
+                <div class="collapse" id="inputFormCard">
                   <div class="card-body">                   
                     <form>
                     <div class="form-group">
@@ -258,6 +249,9 @@
   <!-- Page level plugins -->
   <script src="<?php echo base_url('assets/datatables/jquery.dataTables.min.js')?>"></script>
   <script src="<?php echo base_url('assets/datatables/dataTables.bootstrap4.min.js')?>"></script>
+ 
+  <script src="https://cdn.datatables.net/responsive/2.2.2/js/dataTables.responsive.min.js"></script>
+  
 
   <!-- Page level custom scripts -->
   <script src="<?php echo base_url('js/datatables-plan.js')?>"></script>

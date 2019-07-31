@@ -1,7 +1,9 @@
 // Call the dataTables jQuery plugin
 $(document).ready(function() {
+    
   var groupColumn = 6;
   var table = $('#planDataTable').DataTable({
+        responsive: true,
       "columnDefs": [
           { "visible": false, "targets": groupColumn }
       ],

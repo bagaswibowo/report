@@ -1,10 +1,10 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Intensitas extends CI_Controller {
+class C_ActivityLog extends CI_Controller {
     
     public function index()
     {
-        $this->load->view('activity/intensitas');
+        $this->load->view('activity/V_activitylog');
     }
 }

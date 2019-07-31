@@ -7,8 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+  <link rel="icon" href="./favicon.ico" type="image/gif">
 
-  <title>AM Logging Application</title>
+  <title>GT LogAM Application</title>
 
   <!-- Bootstrap Core CSS -->
   <link href="<?php echo base_url('assets/bootstrap/bootstrap.min.css')?>" rel="stylesheet">
@@ -28,11 +29,11 @@
   <!-- Header -->
   <header class="masthead d-flex">
     <div class="container text-center my-auto">
-      <h1 class="mb-1 text-white">AM Logging</h1>
+      <h1 class="mb-1 text-white">GT LogAM</h1>
       <h3 class="mb-5 text-white">
-        <em>A Simple Log Manager System</em>
+        <em>A Simple Log Management System for Gamatechno</em>
       </h3>
-      <a class="btn btn-primary btn-xl js-scroll-trigger" href="index.php/login">Find Out More</a>
+      <a class="btn btn-primary btn-xl js-scroll-trigger" href="./login">Get Started</a>
     </div>
     <div class="overlay"></div>
   </header>

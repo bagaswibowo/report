@@ -1,10 +1,10 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Plan extends CI_Controller {
-    
+class C_Login extends CI_Controller {
+
     public function index()
     {
-        $this->load->view('activity/plan');
+        $this->load->view('admin/V_login');
     }
 }

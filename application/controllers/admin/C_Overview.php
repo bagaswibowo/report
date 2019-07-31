@@ -1,9 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Overview extends CI_Controller {
+class C_Overview extends CI_Controller {
       public function index() 
     {
-        $this->load->view('admin/overview');
+        $this->load->view('admin/V_overview');
     }
 }

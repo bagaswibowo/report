@@ -61,3 +61,4 @@ $route['intensitas'] = 'activity/C_intensitas';
 $route['activitylog'] = 'activity/C_activitylog';
 $route['project'] = 'activity/C_project';
 $route['prospect'] = 'activity/C_prospect';
+$route['history-project'] = 'activity/C_historyProject';

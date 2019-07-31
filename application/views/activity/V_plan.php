@@ -10,7 +10,7 @@
   
   <!-- Custom styles for this page -->
   <link href="<?php echo base_url('assets/datatables/dataTables.bootstrap4.min.css')?>" rel="stylesheet">
-  <link href="<?php echo base_url('assets/datatables/responsive.bootstrap4.min.css')?>" rel="stylesheet">
+  <link href="<?php echo base_url('assets/datatables/responsive.dataTables.min.css')?>" rel="stylesheet">
 
 </head>
 
@@ -249,9 +249,7 @@
   <!-- Page level plugins -->
   <script src="<?php echo base_url('assets/datatables/jquery.dataTables.min.js')?>"></script>
   <script src="<?php echo base_url('assets/datatables/dataTables.bootstrap4.min.js')?>"></script>
- 
-  <script src="https://cdn.datatables.net/responsive/2.2.2/js/dataTables.responsive.min.js"></script>
-  
+  <script src="<?php echo base_url('assets/datatables/dataTables.responsive.min.js')?>"></script>
 
   <!-- Page level custom scripts -->
   <script src="<?php echo base_url('js/datatables-plan.js')?>"></script>

@@ -2,6 +2,7 @@
 $(document).ready(function() {
   var groupColumn = 0;
   var table = $('#logDataTable').DataTable({
+      responsive:true,
       "columnDefs": [
           { "visible": false, "targets": groupColumn }
       ],

@@ -5,8 +5,9 @@
 
   <!-- Header -->
   <?php include 'application\views\includes\header.php'; ?>
-  
-  <title><?php echo SITE_NAME;?> - Reporting</title>
+
+  <title><?php echo SITE_NAME;?> - History Project</title>
+
   <!-- Custom styles for this page -->
   <link href="<?php echo base_url('assets/datatables/dataTables.bootstrap4.min.css')?>" rel="stylesheet">
   <link href="<?php echo base_url('assets/datatables/responsive.dataTables.min.css')?>" rel="stylesheet">
@@ -21,7 +22,7 @@
   <!-- Sidebar -->
   <?php require 'application\views\includes\sidebar.php' ?>
   <script>
-        document.getElementById("report").className += " active";
+        document.getElementById("historyproject").className += " active";
   </script>
 
     <!-- Content Wrapper -->
@@ -37,94 +38,100 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Report</h1>
-          <p class="mb-4">Berisikan laporan dari daftar rencana yang berhasil dikerjakan.</p>
+          <h1 class="h3 mb-2 text-gray-800">History Project</h1>
+          <p class="mb-4">Daftar History Project</p>
 
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Tabel Laporan</h6>
+              <h6 class="m-0 font-weight-bold text-primary">AM History Project Tables</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
-                <table class="table table-bordered" id="reportDataTable" width="100%" cellspacing="0">
-                <thead>
+                <table class="table table-bordered" id="historyProjectDataTable" width="100%" cellspacing="0">
+                  <thead>
                     <tr>
                       <th>No</th>
-                      <th>Activity</th>
-                      <th>Type Activity</th>
-                      <th>Customer Name</th>
-                      <th>Stage</th>
-                      <th>Noted</th>
-                      <th>Date</th>
+                      <th>AM</th>
+                      <th>Project</th>
+                      <th>Tahun</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <td>1</td>
+                      <td>Diskominfo Kab. Sleman</td>
                       <td>Cari kontak diskominfo Lubuk Linggau</td>
-                      <td>Call</td>
-                      <td>Diskominfo Kab.</td>
-                      <td>Open Prospect</td>
-                      <td>Sudah mendapatkan nomer bidang e-gov</td>
-                      <td>17 Juni 2019</td>
+                      <td>2018</td>
+                      <td>
+                        <a href="#" class="btn btn-info btn-icon-split btn-sm">
+                          <span class="icon text-white-50">
+                            <i class="fas fa-info-circle"></i>
+                          </span>
+                          <span class="text">See Detail</span>
+                        </a>
+                      </td>
                     </tr>
                     <tr>
                       <td>2</td>
+                      <td>Diskominfo Kab. Sleman</td>
                       <td>Cari kontak diskominfo Lubuk Linggau</td>
-                      <td>Call</td>
-                      <td>Diskominfo Kab.</td>
-                      <td>Open Prospect</td>
-                      <td>Nomer kantor tidak tercantum di web. Sudah chat melakui DM IG tapi belum di respon</td>
-                      <td>17 Juni 2019</td>
+                      <td>2018</td>
+                      <td>
+                        <a href="#" class="btn btn-info btn-icon-split btn-sm">
+                          <span class="icon text-white-50">
+                            <i class="fas fa-info-circle"></i>
+                          </span>
+                          <span class="text">See Detail</span>
+                        </a>
+                      </td>
                     </tr>
                     <tr>
                       <td>3</td>
+                      <td>Diskominfo Kab. Sleman</td>
                       <td>Cari kontak diskominfo Lubuk Linggau</td>
-                      <td>Call</td>
-                      <td>Diskominfo Kab.</td>
-                      <td>Open Prospect</td>
-                      <td>Nomer kantor tidak bisa dihubungi</td>
-                      <td>17 Juni 2019</td>
+                      <td>2018</td>
+                      <td>
+                        <a href="#" class="btn btn-info btn-icon-split btn-sm">
+                          <span class="icon text-white-50">
+                            <i class="fas fa-info-circle"></i>
+                          </span>
+                          <span class="text">See Detail</span>
+                        </a>
+                      </td>
                     </tr>
                     <tr>
                       <td>4</td>
+                      <td>Diskominfo Kab. Sleman</td>
                       <td>Cari kontak diskominfo Lubuk Linggau</td>
-                      <td>Call</td>
-                      <td>Diskominfo Kab.</td>
-                      <td>Open Prospect</td>
-                      <td>Sudah mendapatkan nomer kabid kominfonya</td>
-                      <td>18 Juni 2019</td>
+                      <td>2018</td>
+                      <td>
+                        <a href="#" class="btn btn-info btn-icon-split btn-sm">
+                          <span class="icon text-white-50">
+                            <i class="fas fa-info-circle"></i>
+                          </span>
+                          <span class="text">See Detail</span>
+                        </a>
+                      </td>
                     </tr>
                     <tr>
                       <td>5</td>
+                      <td>Diskominfo Kab. Sleman</td>
                       <td>Cari kontak diskominfo Lubuk Linggau</td>
-                      <td>Call</td>
-                      <td>Diskominfo Kab.</td>
-                      <td>Open Prospect</td>
-                      <td>Done</td>
-                      <td>18 Juni 2019</td>
-                    </tr>
-                    <tr>
-                      <td>6</td>
-                      <td>Cari kontak diskominfo Lubuk Linggau</td>
-                      <td>Call</td>
-                      <td>Diskominfo Kab.</td>
-                      <td>Open Prospect</td>
-                      <td>Nomer kantor tidak bisa dihubungi</td>
-                      <td>18 Juni 2019</td>
-                    </tr>
-                    <tr>
-                      <td>7</td>
-                      <td>Cari kontak diskominfo Lubuk Linggau</td>
-                      <td>Call</td>
-                      <td>Diskominfo Kab.</td>
-                      <td>Open Prospect</td>
-                      <td>Nomor kantor tidak bisa dihubungi</td>
-                      <td>19 Juni 2019</td>
+                      <td>2018</td>
+                      <td>
+                        <a href="#" class="btn btn-info btn-icon-split btn-sm">
+                          <span class="icon text-white-50">
+                            <i class="fas fa-info-circle"></i>
+                          </span>
+                          <span class="text">See Detail</span>
+                        </a>
+                      </td>
                     </tr>
                   </tbody>
                 </table>
+
               </div>
             </div>
           </div>
@@ -168,15 +175,14 @@
   <script src="<?php echo base_url('assets/datatables/dataTables.responsive.min.js')?>"></script>
 
   <!-- Page level custom scripts -->
-  <script src="<?php echo base_url('js/datatables-report.js')?>"></script>
+  <script src="<?php echo base_url('js/datatables-historyproject.js')?>"></script>
+  
 
 </body>
 
 </html>
-
-<style Type='text/css'>
-tr.group,
-tr.group:hover {
-    background-color: #eee !important;
+<style type="text/css">
+#historyProjectDataTable td:nth-child(5){
+  text-align: center;
 }
 </style>

@@ -2,6 +2,7 @@
 $(document).ready(function() {
   var groupColumn = 6;
   var table = $('#reportDataTable').DataTable({
+      responsive:true,
       "columnDefs": [
           { "visible": false, "targets": groupColumn }
       ],

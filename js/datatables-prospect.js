@@ -1,4 +1,6 @@
 // Call the dataTables jQuery plugin
 $(document).ready(function() {
-    $('#projectDataTable').DataTable();
+    $('#projectDataTable').DataTable({
+        responsive:true
+    });
 });

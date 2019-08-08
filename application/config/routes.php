@@ -53,12 +53,12 @@ $route['default_controller'] = 'C_welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['admin'] = 'admin/C_overview';
+$route['dashboard'] = 'admin/C_overview';
 $route['login'] = 'admin/C_login';
 $route['plan'] = 'activity/C_plan';
 $route['report'] = 'activity/C_report';
 $route['intensitas'] = 'activity/C_intensitas';
-$route['activitylog'] = 'activity/C_activitylog';
+$route['logActivity'] = 'activity/C_activitylog';
 $route['project'] = 'activity/C_project';
 $route['prospect'] = 'activity/C_prospect';
-$route['history-project'] = 'activity/C_historyProject';
+$route['history-Project'] = 'activity/C_historyProject';

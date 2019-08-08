@@ -4,8 +4,7 @@
 <head>
 
  <!-- Header -->
- <?php include 'application\views\includes\header.php'; ?>
-  <title><?php echo SITE_NAME;?> - Intensitas Kontak</title>
+ <?php $this->load->view("_includes/header.php") ?>
 
 </head>
 
@@ -15,10 +14,7 @@
   <div id="wrapper">
 
   <!-- Sidebar -->
-  <?php require 'application\views\includes\sidebar.php' ?>
-  <script>
-        document.getElementById("intensitas").className += " active";
-  </script>
+  <?php $this->load->view("_includes/sidebar.php") ?>
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -27,7 +23,7 @@
       <div id="content">
 
         <!-- Topbar -->
-        <?php include 'application\views\includes\topbar.php'; ?>
+        <?php $this->load->view("_includes/topbar.php") ?>
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
@@ -60,7 +56,7 @@
       <!-- End of Main Content -->
 
       <!-- Footer -->
-      <?php include 'application\views\includes\footer.php';?>
+      <?php $this->load->view("_includes/footer.php") ?>
 
     </div>
     <!-- End of Content Wrapper -->
@@ -69,22 +65,13 @@
   <!-- End of Page Wrapper -->
 
   <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
+  <?php $this->load->view("_includes/scrolltop.php") ?>
 
   <!-- Logout Modal-->
-  <?php include 'application\views\includes\logout-modal.php';?>
+  <?php $this->load->view("_includes/modal.php") ?>
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="<?php echo base_url('assets/jquery/jquery.min.js')?>"></script>
-  <script src="<?php echo base_url('assets/bootstrap/js/bootstrap.bundle.min.js')?>"></script>
-
-  <!-- Core plugin JavaScript-->
-  <script src="<?php echo base_url('assets/jquery-easing/jquery.easing.min.js')?>"></script>
-
-  <!-- Custom scripts for all pages-->
-  <script src="<?php echo base_url('js/sb-admin-2.min.js')?>"></script>
+  <!-- JS -->
+  <?php $this->load->view("_includes/js.php") ?>
 
   <!-- Page level plugins -->
   <script src="<?php echo base_url('assets/chart.js/Chart.min.js')?>"></script>

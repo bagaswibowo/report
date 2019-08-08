@@ -4,9 +4,7 @@
 <head>
 
 <!-- Header -->
-<?php include 'application\views\includes\header.php'; ?>
-
-  <title><?php echo SITE_NAME;?> - Login</title>
+<?php $this->load->view("_includes/header.php") ?>
 
 </head>
 
@@ -42,7 +40,7 @@
                         <label class="custom-control-label" for="customCheck">Remember Me</label>
                       </div>
                     </div>
-                    <a href="<?php echo base_url('./admin')?>" class="btn btn-primary btn-user btn-block">
+                    <a href="<?php echo base_url('./dashboard')?>" class="btn btn-primary btn-user btn-block">
                       Login
                     </a>
                   </form>
@@ -65,15 +63,7 @@
 
   </div>
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="<?php echo base_url('assets/jquery/jquery.min.js')?>"></script>
-  <script src="<?php echo base_url('assets/bootstrap/js/bootstrap.bundle.min.js')?>"></script>
-
-  <!-- Core plugin JavaScript-->
-  <script src="<?php echo base_url('assets/jquery-easing/jquery.easing.min.js')?>"></script>
-
-  <!-- Custom scripts for all pages-->
-  <script src="<?php echo base_url('js/sb-admin-2.min.js')?>"></script>
+  <?php $this->load->view("_includes/js.php") ?>
 
 </body>
 

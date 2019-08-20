@@ -43,16 +43,19 @@
                   <h6 class="m-0 font-weight-bold text-primary">Input Plan Form</h6>
                 </a>
                 <!-- Card Content - Collapse -->
-                <div class="collapse" id="inputFormCard">
+                <div class="collapse <?php echo form_error() ? 'show':'' ?>" id="inputFormCard">
                   <div class="card-body">                   
-                    <form>
-                    <div class="form-group">
-                      <label for="actName">Activity Name</label>
-                      <input type="text" class="form-control form-control-user" id="actName" placeholder="Enter activity name...">
+                    <form action="<?php base_url('plan/add') ?>" method="post" enctype="multipart/form-data">
+                    <div class="form-group ">
+                      <label for="activityName">Activity Name</label>
+                      <input type="text" class="form-control <?php echo form_error('activity') ? 'is-invalid':'' ?>" id="activityName" placeholder="Enter activity name...">
+                      <div class="invalid-feedback">
+                        <?php echo form_error('activity') ?>
+                      </div>
                     </div>
                     <div class="form-group">
-                    <label for="actType">Type Activity</label>
-                      <select class="form-control" id="actType">
+                    <label for="activityType">Type Activity</label>
+                      <select class="form-control <?php echo form_error('type') ? 'is-invalid':'' ?>" id="activityType">
                         <option>Call</option>
                         <option>Email/Fax</option>
                         <option>Customer Meeting</option>
@@ -60,29 +63,36 @@
                         <option>Product Presentation</option>
                         <option>Administration</option>
                       </select>
+                      <div class="invalid-feedback">
+                        <?php echo form_error('activity') ?>
+                      </div>
                     </div>
                     <div class="form-group">
-                      <label for="cusName">Customer Name</label>
-                      <input type="text" class="form-control form-control-user" id="cusName" placeholder="Enter customer name...">
+                      <label for="client_id">Customer Name</label>
+                      <input type="text" class="form-control <?php echo form_error('client_id') ? 'is-invalid':'' ?>" id="client_id" placeholder="Enter customer name...">
+                      <div class="invalid-feedback">
+                        <?php echo form_error('client_id') ?>
+                      </div>
                     </div>
                     <div class="form-group">
                     <label for="stage">Stage</label>
-                      <select class="form-control" id="stage">
+                      <select class="form-control <?php echo form_error('stage') ? 'is-invalid':'' ?>" id="stage">
                         <option>Open Prospect</option>
                         <option>Prospecting Progress</option>
                         <option>Closing Deal</option>
                         <option>Fail</option>
                         <option>Project Progress</option>
                       </select>
+                      <div class="invalid-feedback">
+                        <?php echo form_error('stage') ?>
+                      </div>
                     </div>
                     <div class="form-group">
                       <label for="note">Note</label>
                       <textarea class="form-control" id="note" rows="3"></textarea>
                     </div>
 
-                      <a href="<?php echo base_url('index.php/admin')?>" class="btn btn-primary btn-user btn-block">
-                        Submit
-                      </a>
+                      <input class="btn btn-primary btn-user btn-block" type="submit" name="btn" value="Submit">
                     </form>
 
                   </div>
@@ -110,6 +120,26 @@
                     </tr>
                   </thead>
                   <tbody>
+                      <?php
+                      $number = 1;
+                      foreach ($activities as $activity): 
+                      ?>
+                    <tr>
+                      <td><?php echo $number ?></td>
+                      <td><?php echo $activity->activity ?></td>
+                      <td><?php echo $activity->type ?></td>
+                      <td><?php echo $activity->id_client ?></td>
+                      <td><?php echo $activity->stage ?></td>
+                      <td><?php echo $activity->note ?></td>
+                      <td><?php echo $activity->waktu ?></td>
+                      <td>
+                        <button href="#" data-toggle="modal" data-target="#logoutModal" class="btn btn-success btn-circle btn-sm <?php echo $activity->done == 'no' ? 'invisible' : '' ?>" <?php echo $activity->done == 'yes' ? 'disabled' : '' ?>>
+                          <i class="fas fa-check"></i></button>
+                        <button onclick="window.location.href = '<?php echo site_url('plan/declineAct/'.$activity->id_activity)?>';" class="btn btn-danger btn-circle btn-sm <?php echo $activity->done == 'yes' ? 'invisible' : '' ?>" <?php echo $activity->done == 'no' ? 'disabled' : '' ?>>
+                          <i class="fas fa-trash"></i></button>
+                      </td>
+                    </tr>
+                    <?php $number++; endforeach; ?>
                     <tr>
                       <td>1</td>
                       <td>Cari kontak diskominfo Lubuk Linggau</td>

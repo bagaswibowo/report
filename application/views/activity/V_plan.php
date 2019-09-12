@@ -45,7 +45,7 @@
                 <!-- Card Content - Collapse -->
                 <div class="collapse <?php echo form_error() ? 'show':'' ?>" id="inputFormCard">
                   <div class="card-body">                   
-                    <form action="<?php base_url('plan/add') ?>" method="post" enctype="multipart/form-data">
+                    <form action="" method="post" enctype="multipart/form-data">
                     <div class="form-group ">
                       <label for="activityName">Activity Name</label>
                       <input type="text" class="form-control <?php echo form_error('activity') ? 'is-invalid':'' ?>" id="activityName" placeholder="Enter activity name...">
@@ -92,7 +92,7 @@
                       <textarea class="form-control" id="note" rows="3"></textarea>
                     </div>
 
-                      <input class="btn btn-primary btn-user btn-block" type="submit" name="btn" value="Submit">
+                      <input class="btn btn-primary btn-user btn-block" type="submit" name="add" value="Submit">
                     </form>
 
                   </div>

@@ -43,19 +43,20 @@
                   <h6 class="m-0 font-weight-bold text-primary">Input Plan Form</h6>
                 </a>
                 <!-- Card Content - Collapse -->
-                <div class="collapse <?php echo form_error() ? 'show':'' ?>" id="inputFormCard">
-                  <div class="card-body">                   
-                    <form action="" method="post" enctype="multipart/form-data">
+                <div class="collapse <?php echo validation_errors() ? 'show':'' ?>" id="inputFormCard">
+                  <div class="card-body">
+
+                    <form action="<?php echo base_url('plan/add')?>" method="post" enctype="multipart/form-data">
                     <div class="form-group ">
                       <label for="activityName">Activity Name</label>
-                      <input type="text" class="form-control <?php echo form_error('activity') ? 'is-invalid':'' ?>" id="activityName" placeholder="Enter activity name...">
+                      <input type="text" class="form-control <?php echo form_error('activityName') ? 'is-invalid':'' ?>" id="activityName" name="activityName" placeholder="Enter activity name...">
                       <div class="invalid-feedback">
-                        <?php echo form_error('activity') ?>
+                        <?php echo form_error('activityName') ?>
                       </div>
                     </div>
                     <div class="form-group">
                     <label for="activityType">Type Activity</label>
-                      <select class="form-control <?php echo form_error('type') ? 'is-invalid':'' ?>" id="activityType">
+                      <select class="form-control" id="activityType" name="activityType">
                         <option>Call</option>
                         <option>Email/Fax</option>
                         <option>Customer Meeting</option>
@@ -63,42 +64,49 @@
                         <option>Product Presentation</option>
                         <option>Administration</option>
                       </select>
-                      <div class="invalid-feedback">
-                        <?php echo form_error('activity') ?>
-                      </div>
                     </div>
                     <div class="form-group">
-                      <label for="client_id">Customer Name</label>
-                      <input type="text" class="form-control <?php echo form_error('client_id') ? 'is-invalid':'' ?>" id="client_id" placeholder="Enter customer name...">
+                      <label for="id_client">Customer Name</label>
+                      <input type="text" class="form-control <?php echo form_error('id_client') ? 'is-invalid':'' ?>" id="id_client" name="id_client" placeholder="Enter customer name...">
                       <div class="invalid-feedback">
-                        <?php echo form_error('client_id') ?>
+                        <?php echo form_error('id_client') ?>
                       </div>
                     </div>
                     <div class="form-group">
                     <label for="stage">Stage</label>
-                      <select class="form-control <?php echo form_error('stage') ? 'is-invalid':'' ?>" id="stage">
+                      <select class="form-control" id="stage" name="stage">
                         <option>Open Prospect</option>
                         <option>Prospecting Progress</option>
                         <option>Closing Deal</option>
                         <option>Fail</option>
                         <option>Project Progress</option>
                       </select>
-                      <div class="invalid-feedback">
-                        <?php echo form_error('stage') ?>
-                      </div>
                     </div>
                     <div class="form-group">
                       <label for="note">Note</label>
-                      <textarea class="form-control" id="note" rows="3"></textarea>
+                      <textarea class="form-control" id="note" name="note" rows="3"></textarea>
                     </div>
 
-                      <input class="btn btn-primary btn-user btn-block" type="submit" name="add" value="Submit">
+                      <input class="btn btn-primary btn-user btn-block" type="submit" value="Submit">
                     </form>
 
                   </div>
                 </div>
               </div>
 
+              <?php if($this->session->flashdata('success')) : ?>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <?php echo $this->session->flashdata('success'); ?>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                </div>
+            </div>
+            <?php endif; ?>
+            
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
@@ -133,104 +141,30 @@
                       <td><?php echo $activity->note ?></td>
                       <td><?php echo $activity->waktu ?></td>
                       <td>
-                        <button href="#" data-toggle="modal" data-target="#logoutModal" class="btn btn-success btn-circle btn-sm <?php echo $activity->done == 'no' ? 'invisible' : '' ?>" <?php echo $activity->done == 'yes' ? 'disabled' : '' ?>>
+                        <button onclick="window.location.href ='<?php echo base_url('activity/C_plan/acceptAct/'.$activity->id_activity)?>';" class="btn btn-success btn-circle btn-sm <?php echo $activity->done == 'no' ? 'invisible' : '' ?>" <?php echo $activity->done == 'yes' ? 'disabled' : '' ?>>
                           <i class="fas fa-check"></i></button>
-                        <button onclick="window.location.href = '<?php echo site_url('plan/declineAct/'.$activity->id_activity)?>';" class="btn btn-danger btn-circle btn-sm <?php echo $activity->done == 'yes' ? 'invisible' : '' ?>" <?php echo $activity->done == 'no' ? 'disabled' : '' ?>>
+                        <button id="decBtn" href="#" data-toggle="modal" data-target="#confirmModal<?php echo $activity->id_activity?>" class="btn btn-danger btn-circle btn-sm <?php echo $activity->done == 'yes' ? 'invisible' : '' ?>" <?php echo $activity->done == 'no' ? 'disabled' : '' ?>>
                           <i class="fas fa-trash"></i></button>
+                          <div class="modal fade" id="confirmModal<?php echo $activity->id_activity?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                  <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Caution!</h5>
+                                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">×</span>
+                                        </button>
+                                      </div>
+                                      <div class="modal-body">Are you sure to Decline this activity?</div>
+                                      <div class="modal-footer">
+                                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                                        <a class="btn btn-primary" id="declineBtn" href="<?php echo site_url('activity/C_plan/declineAct/'.$activity->id_activity)?>">Yes</a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
                       </td>
                     </tr>
                     <?php $number++; endforeach; ?>
-                    <tr>
-                      <td>1</td>
-                      <td>Cari kontak diskominfo Lubuk Linggau</td>
-                      <td>Call</td>
-                      <td>Diskominfo Kab.</td>
-                      <td>Open Prospect</td>
-                      <td>........................................</td>
-                      <td>17 Juni 2019</td>
-                      <td><a href="#" class="btn btn-success btn-circle btn-sm">
-                          <i class="fas fa-check"></i></a>
-                          <a href="#" class="btn btn-danger btn-circle btn-sm">
-                          <i class="fas fa-trash"></i></a></td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>Cari kontak diskominfo Lubuk Linggau</td>
-                      <td>Call</td>
-                      <td>Diskominfo Kab.</td>
-                      <td>Open Prospect</td>
-                      <td>........................................</td>
-                      <td>17 Juni 2019</td>
-                      <td><a href="#" class="btn btn-success btn-circle btn-sm">
-                          <i class="fas fa-check"></i></a>
-                          <a href="#" class="btn btn-danger btn-circle btn-sm">
-                          <i class="fas fa-trash"></i></a></td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>Cari kontak diskominfo Lubuk Linggau</td>
-                      <td>Call</td>
-                      <td>Diskominfo Kab.</td>
-                      <td>Open Prospect</td>
-                      <td>........................................</td>
-                      <td>17 Juni 2019</td>
-                      <td><a href="#" class="btn btn-success btn-circle btn-sm">
-                          <i class="fas fa-check"></i></a>
-                          <a href="#" class="btn btn-danger btn-circle btn-sm">
-                          <i class="fas fa-trash"></i></a></td>
-                    </tr>
-                    <tr>
-                      <td>4</td>
-                      <td>Cari kontak diskominfo Lubuk Linggau</td>
-                      <td>Call</td>
-                      <td>Diskominfo Kab.</td>
-                      <td>Open Prospect</td>
-                      <td>........................................</td>
-                      <td>18 Juni 2019</td>
-                      <td><a href="#" class="btn btn-success btn-circle btn-sm">
-                          <i class="fas fa-check"></i></a>
-                          <a href="#" class="btn btn-danger btn-circle btn-sm">
-                          <i class="fas fa-trash"></i></a></td>
-                    </tr>
-                    <tr>
-                      <td>5</td>
-                      <td>Cari kontak diskominfo Lubuk Linggau</td>
-                      <td>Call</td>
-                      <td>Diskominfo Kab.</td>
-                      <td>Open Prospect</td>
-                      <td>........................................</td>
-                      <td>18 Juni 2019</td>
-                      <td><a href="#" class="btn btn-success btn-circle btn-sm">
-                          <i class="fas fa-check"></i></a>
-                          <a href="#" class="btn btn-danger btn-circle btn-sm">
-                          <i class="fas fa-trash"></i></a></td>
-                    </tr>
-                    <tr>
-                      <td>6</td>
-                      <td>Cari kontak diskominfo Lubuk Linggau</td>
-                      <td>Call</td>
-                      <td>Diskominfo Kab.</td>
-                      <td>Open Prospect</td>
-                      <td>........................................</td>
-                      <td>18 Juni 2019</td>
-                      <td><a href="#" class="btn btn-success btn-circle btn-sm">
-                          <i class="fas fa-check"></i></a>
-                          <a href="#" class="btn btn-danger btn-circle btn-sm">
-                          <i class="fas fa-trash"></i></a></td>
-                    </tr>
-                    <tr>
-                      <td>7</td>
-                      <td>Cari kontak diskominfo Lubuk Linggau</td>
-                      <td>Call</td>
-                      <td>Diskominfo Kab.</td>
-                      <td>Open Prospect</td>
-                      <td>........................................</td>
-                      <td>19 Juni 2019</td>
-                      <td><a href="#" class="btn btn-success btn-circle btn-sm">
-                          <i class="fas fa-check"></i></a>
-                          <a href="#" class="btn btn-danger btn-circle btn-sm">
-                          <i class="fas fa-trash"></i></a></td>
-                    </tr>
                   </tbody>
                 </table>
 
@@ -256,7 +190,7 @@
   <!-- Scroll to Top Button-->
   <?php $this->load->view("_includes/scrolltop.php") ?>
 
-  <!-- Logout Modal-->
+  <!-- Modal-->
   <?php $this->load->view("_includes/modal.php") ?>
 
   <!-- JS -->

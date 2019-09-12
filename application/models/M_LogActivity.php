@@ -10,20 +10,12 @@ class M_LogActivity extends CI_Model {
         return [
 
             ['field' => 'id_client',
-            'label' => 'ID Client',
+            'label' => 'Customer Name',
             'rules' => 'required'],
 
-            ['field' => 'activity',
-            'label' => 'Activity',
-            'rules' => 'required'],
-
-            ['field' => 'type',
-            'label' => 'Activity Type',
-            'rules' => 'required'],
-
-            ['field' => 'stage',
-            'label' => 'Stage',
-            'rules' => 'required'],
+            ['field' => 'activityName',
+            'label' => 'Activity Name',
+            'rules' => 'required']
             
         ];
     }
@@ -40,8 +32,7 @@ class M_LogActivity extends CI_Model {
     public function saveActivity()
     {
         $post = $this->input->post();
-        $this->id_activity = uniqid();
-        $this->id_am = $_SESSION["id_am"];
+        $this->id_am = 1;
         $this->id_client = $post["id_client"];
         $this->activity = $post["activityName"];
         $this->type = $post["activityType"];
@@ -53,23 +44,35 @@ class M_LogActivity extends CI_Model {
     }
 
     public function acceptActivity($id_activity)
-    {
+    {  
+        $tb = "tb_log_activity";
         $post = $this->input->post();
-        $this->done = "yes";
-        $this->note = $post["note"];
-        $this->db->update($this->_table, $this, array('id_actitivy' => $post["id_activity"]));
+        $id_client = $post["id_client"];
+        $activity = $post["activityName"];
+        $type = $post["activityType"];
+        $stage = $post["stage"];
+        $note = $post["note"];
+        $query = "UPDATE $tb SET `activity`='$activity', `type`='$type', `stage`='$stage', `note`='$note', `id_client`='$id_client', `done`='yes' WHERE `id_activity`='$id_activity' ";
+        $this->db->query($query);
+        return true;
     }
 
     public function declineActivity($id_activity)
     {
-        $post = $this->input->post();
-        $this->done = "no";
-        $this->db->update($this->_table, $this, array('id_actitivy' => $post["id_activity"]));
+        $tb = "tb_log_activity";
+        $query = "UPDATE $tb SET done='no' WHERE id_activity=$id_activity";
+        $this->db->query($query);
+        return true;
     }
 
     public function getActivityCount()
     {
         //get intensitas kontek seko kene bos
+    }
+
+    public function getActByID($id_activity)
+    {
+        return $this->db->get_where($this->_table, ["id_activity" => $id_activity])->row();
     }
 
 }

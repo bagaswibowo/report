@@ -9,12 +9,8 @@ class M_LogActivity extends CI_Model {
     public function rules() {
         return [
 
-            ['field' => 'id_client',
-            'label' => 'Customer Name',
-            'rules' => 'required'],
-
             ['field' => 'activityName',
-            'label' => 'Activity Name',
+            'label' => 'activity name',
             'rules' => 'required']
             
         ];
@@ -26,7 +22,7 @@ class M_LogActivity extends CI_Model {
 
     public function getAcceptedAct()
     {
-        return $this->db->get($this->_table, array('done' => 'yes'));
+        return $this->db->get_where($this->_table, ["done" => 'yes'])->result();
     }
 
     public function saveActivity()

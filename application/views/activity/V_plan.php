@@ -48,14 +48,14 @@
 
                     <form action="<?php echo base_url('plan/add')?>" method="post" enctype="multipart/form-data">
                     <div class="form-group ">
-                      <label for="activityName">Activity Name</label>
+                      <label for="activityName">Activity name *</label>
                       <input type="text" class="form-control <?php echo form_error('activityName') ? 'is-invalid':'' ?>" id="activityName" name="activityName" placeholder="Enter activity name...">
                       <div class="invalid-feedback">
                         <?php echo form_error('activityName') ?>
                       </div>
                     </div>
                     <div class="form-group">
-                    <label for="activityType">Type Activity</label>
+                    <label for="activityType">Type Activity *</label>
                       <select class="form-control" id="activityType" name="activityType">
                         <option>Call</option>
                         <option>Email/Fax</option>
@@ -66,14 +66,11 @@
                       </select>
                     </div>
                     <div class="form-group">
-                      <label for="id_client">Customer Name</label>
-                      <input type="text" class="form-control <?php echo form_error('id_client') ? 'is-invalid':'' ?>" id="id_client" name="id_client" placeholder="Enter customer name...">
-                      <div class="invalid-feedback">
-                        <?php echo form_error('id_client') ?>
-                      </div>
+                      <label for="id_client">Customer name</label>
+                      <input type="text" class="form-control" id="id_client" name="id_client" placeholder="Enter customer name...">
                     </div>
                     <div class="form-group">
-                    <label for="stage">Stage</label>
+                    <label for="stage">Stage *</label>
                       <select class="form-control" id="stage" name="stage">
                         <option>Open Prospect</option>
                         <option>Prospecting Progress</option>
@@ -85,8 +82,8 @@
                     <div class="form-group">
                       <label for="note">Note</label>
                       <textarea class="form-control" id="note" name="note" rows="3"></textarea>
+                      <div style="color: red">* Required</div>
                     </div>
-
                       <input class="btn btn-primary btn-user btn-block" type="submit" value="Submit">
                     </form>
 

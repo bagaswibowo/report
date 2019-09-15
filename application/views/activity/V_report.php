@@ -51,74 +51,25 @@
                       <th>Type Activity</th>
                       <th>Customer Name</th>
                       <th>Stage</th>
-                      <th>Noted</th>
+                      <th>Note</th>
                       <th>Date</th>
                     </tr>
                   </thead>
                   <tbody>
+                  <?php
+                      $number = 1;
+                      foreach ($activities as $activity): 
+                      ?>
                     <tr>
-                      <td>1</td>
-                      <td>Cari kontak diskominfo Lubuk Linggau</td>
-                      <td>Call</td>
-                      <td>Diskominfo Kab.</td>
-                      <td>Open Prospect</td>
-                      <td>Sudah mendapatkan nomer bidang e-gov</td>
-                      <td>17 Juni 2019</td>
+                      <td><?php echo $number ?></td>
+                      <td><?php echo $activity->activity ?></td>
+                      <td><?php echo $activity->type ?></td>
+                      <td><?php echo $activity->id_client ?></td>
+                      <td><?php echo $activity->stage ?></td>
+                      <td><?php echo $activity->note ?></td>
+                      <td><?php echo $activity->waktu ?></td>
                     </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>Cari kontak diskominfo Lubuk Linggau</td>
-                      <td>Call</td>
-                      <td>Diskominfo Kab.</td>
-                      <td>Open Prospect</td>
-                      <td>Nomer kantor tidak tercantum di web. Sudah chat melakui DM IG tapi belum di respon</td>
-                      <td>17 Juni 2019</td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>Cari kontak diskominfo Lubuk Linggau</td>
-                      <td>Call</td>
-                      <td>Diskominfo Kab.</td>
-                      <td>Open Prospect</td>
-                      <td>Nomer kantor tidak bisa dihubungi</td>
-                      <td>17 Juni 2019</td>
-                    </tr>
-                    <tr>
-                      <td>4</td>
-                      <td>Cari kontak diskominfo Lubuk Linggau</td>
-                      <td>Call</td>
-                      <td>Diskominfo Kab.</td>
-                      <td>Open Prospect</td>
-                      <td>Sudah mendapatkan nomer kabid kominfonya</td>
-                      <td>18 Juni 2019</td>
-                    </tr>
-                    <tr>
-                      <td>5</td>
-                      <td>Cari kontak diskominfo Lubuk Linggau</td>
-                      <td>Call</td>
-                      <td>Diskominfo Kab.</td>
-                      <td>Open Prospect</td>
-                      <td>Done</td>
-                      <td>18 Juni 2019</td>
-                    </tr>
-                    <tr>
-                      <td>6</td>
-                      <td>Cari kontak diskominfo Lubuk Linggau</td>
-                      <td>Call</td>
-                      <td>Diskominfo Kab.</td>
-                      <td>Open Prospect</td>
-                      <td>Nomer kantor tidak bisa dihubungi</td>
-                      <td>18 Juni 2019</td>
-                    </tr>
-                    <tr>
-                      <td>7</td>
-                      <td>Cari kontak diskominfo Lubuk Linggau</td>
-                      <td>Call</td>
-                      <td>Diskominfo Kab.</td>
-                      <td>Open Prospect</td>
-                      <td>Nomor kantor tidak bisa dihubungi</td>
-                      <td>19 Juni 2019</td>
-                    </tr>
+                    <?php $number++; endforeach; ?>
                   </tbody>
                 </table>
               </div>

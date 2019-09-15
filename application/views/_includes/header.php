@@ -4,7 +4,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <title><?php echo SITE_NAME .": ". ucfirst($this->uri->segment(1))?></title>
-  <link rel="icon" href="./favicon.ico" type="image/gif">
+  <link rel="icon" href="<?php echo base_url('/favicon.ico')?>" type="image/gif">
 
   <!-- Custom fonts for this template-->
   <link href="<?php echo base_url('assets/fontawesome-free/css/all.min.css') ?>" rel="stylesheet" type="text/css">

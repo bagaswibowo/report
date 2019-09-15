@@ -12,7 +12,7 @@
 
 </head>
 
-<body id="page-top">
+<body id="page-top" onLoad="document.editform.note.focus();">
 
   <!-- Page Wrapper -->
   <div id="wrapper">
@@ -39,10 +39,10 @@
           <!-- Collapsable Card - Input Form -->
           <div class="card shadow mb-4">
                   <div class="card-body">
-                    <form action="<?php echo base_url('activity/C_plan/accept/'.$activity->id_activity)?>" method="post" enctype="multipart/form-data">
+                    <form action="<?php echo base_url('activity/C_plan/accept/'.$activity->id_activity)?>" method="post" enctype="multipart/form-data" name="editform">
                     <div class="form-group ">
                       <label for="activityName">Activity Name</label>
-                      <input type="text" class="form-control <?php echo form_error('activityName') ? 'is-invalid':'' ?>" id="activityName" name="activityName" placeholder="Enter activity name..." value=<?php echo $activity->activity?>>
+                      <input type="text" class="form-control <?php echo form_error('activityName') ? 'is-invalid':'' ?>" id="activityName" name="activityName" placeholder="Enter activity name..." value="<?php echo $activity->activity?>">
                       <div class="invalid-feedback">
                         <?php echo form_error('activityName') ?>
                       </div>
